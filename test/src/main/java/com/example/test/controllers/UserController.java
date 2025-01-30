@@ -115,7 +115,7 @@ public class UserController {
     public String deleteUser(@PathVariable String id) {
         try {
             repo.deleteById(id); 
-            
+            repo.setDeleted(true);
             return "redirect:/users";
         } catch (Exception e) {
             System.out.print("Error deleting user: " + e.getMessage());
